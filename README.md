@@ -1,2 +1,2 @@
-# Algoritma1B
-Tugas Tugas
+# CodingUniv
+Tugas Tugas, Praktikum, dll.
