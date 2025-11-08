@@ -42,7 +42,7 @@ while True:
         print("Berikut isi list yang sudah direverse:", lister)
 
     elif pilihan == "3":
-        print("\nBerikut ini lint awal:", lister)
+        print("\nBerikut ini list awal:", lister)
         lister.sort()
         print("Berikut ini list yang sudah disorting:", lister)
 
