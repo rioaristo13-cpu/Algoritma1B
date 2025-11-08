@@ -37,7 +37,7 @@ while True:
         print("Berikut isi list yang sudah ditambah:", lister)
 
     elif pilihan == "2" :
-        print("\nBerikut ist list awal:", lister)
+        print("\nBerikut isi list awal:", lister)
         lister.reverse()
         print("Berikut isi list yang sudah direverse:", lister)
 
