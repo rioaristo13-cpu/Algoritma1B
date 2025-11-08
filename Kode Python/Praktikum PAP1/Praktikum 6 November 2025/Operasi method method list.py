@@ -3,6 +3,7 @@ print("=== Program Operasi dalam List ===")
 lister = []
 
 banyak = int(input("Banyak elemen dalam list: "))
+print ()
 
 for i in range (banyak):
     isi = input (f"Masukkan isi list ke-{i+1}: ")
@@ -11,10 +12,11 @@ for i in range (banyak):
 print("Isi List saat ini : ")
 print(lister)
 
-tambah = input("\nApakah ingin menambah isi lagi? (ya/tidak): ")
+tambah = input("Apakah ingin menambah isi lagi? (ya/tidak): ")
 if tambah == "ya":
     isi2 = input ("Masukkan isi list tambahan: ")
     lister.append(isi2)
+    print (f"Isi list sekarang: {lister}")
 
 # menu operasi list
 while True:
@@ -27,19 +29,20 @@ while True:
     pilihan = input("Pilih menu (1-4): ")
 
     if pilihan == "1":
-        i = int(input("Data mau dimasukkan ke indeks berapa?"))
+        print(f"Isi list sekarang:\n{lister}")
+        i = int(input("Data mau dimasukkan ke indeks berapa?: "))
         j = input("Isi data: ")
-        print("Berikut isi list awal:", lister)
+        print("\nBerikut isi list awal:", lister)
         lister.insert(i, j)
         print("Berikut isi list yang sudah ditambah:", lister)
 
     elif pilihan == "2" :
-        print("Berikut ist list awal:", lister)
+        print("\nBerikut ist list awal:", lister)
         lister.reverse()
         print("Berikut fsi list yang sudah direverse:", lister)
 
     elif pilihan == "3":
-        print("Herikut ini lint awal:", lister)
+        print("\nBerikut ini lint awal:", lister)
         lister.sort()
         print("Berikut ini list yang sudah disorting:", lister)
 
