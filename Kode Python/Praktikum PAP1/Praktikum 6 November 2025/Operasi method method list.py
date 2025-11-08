@@ -39,7 +39,7 @@ while True:
     elif pilihan == "2" :
         print("\nBerikut ist list awal:", lister)
         lister.reverse()
-        print("Berikut fsi list yang sudah direverse:", lister)
+        print("Berikut isi list yang sudah direverse:", lister)
 
     elif pilihan == "3":
         print("\nBerikut ini lint awal:", lister)
@@ -53,4 +53,3 @@ while True:
     else:
         print("Pilihan tidak valid, coba lagi!")
 
-        
