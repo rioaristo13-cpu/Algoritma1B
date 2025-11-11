@@ -1,0 +1,2 @@
+teks = open('teks', 'r', encoding="utf -8")
+print(teks)
