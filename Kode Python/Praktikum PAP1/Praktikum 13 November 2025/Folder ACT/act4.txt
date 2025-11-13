@@ -1,5 +1,4 @@
-Nama Anda + nama + 
-Kelas Anda + kelas + 
-NPM Anda + npm + 
-Total Ujian : + str(total) + 
-
+Nama Anda : Aristo Azario Christyan
+Kelas Anda : 1IA15
+NPM Anda : 50425143
+Total Ujian : 44.80

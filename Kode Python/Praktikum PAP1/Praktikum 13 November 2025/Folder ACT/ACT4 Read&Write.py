@@ -1,7 +1,7 @@
 def buat_file():
     try:
         with open("act4.txt", "w") as file:
-            nama = input("Masukkan Nama : ")
+            nama = input("\nMasukkan Nama : ")
             kelas = input("Masukkan Kelas : ")
             npm = input("Masukkan NPM : ")
             ujian1 = int(input("Masukkan UTS : "))
@@ -12,7 +12,7 @@ def buat_file():
             file.write("Nama Anda : " + nama + "\n")
             file.write("Kelas Anda : " + kelas + "\n")
             file.write("NPM Anda : " + npm + "\n")
-            file.write("Total Ujian : " + str(tb) + "\n")
+            file.write("Total Ujian : " + tb + "\n")
             file.write("\n")
         print("File 'act4.txt' berhasil dibuat dan ditulis.\n")
     except ValueError:
@@ -21,7 +21,7 @@ def buat_file():
 def baca_file():
     try:
         with open("act4.txt", "r") as file:
-            print("=== Isi File act4.txt ===")
+            print("\n=== Isi File act4.txt ===")
             for baris in file:
                 print (baris.strip())
     except FileNotFoundError:
@@ -33,7 +33,7 @@ def main():
         print("1. Buat file")
         print("2. Baca file")
         print("3. Keluar")
-        pilihan = int(input("Piliahan menu (1-3): "))
+        pilihan = int(input("Pilihan menu (1-3): "))
         if pilihan == 1:
             buat_file()
         elif pilihan == 2:
