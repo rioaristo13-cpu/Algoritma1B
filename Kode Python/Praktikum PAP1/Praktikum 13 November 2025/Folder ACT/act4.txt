@@ -1,0 +1,5 @@
+Nama Anda + nama + 
+Kelas Anda + kelas + 
+NPM Anda + npm + 
+Total Ujian : + str(total) + 
+
