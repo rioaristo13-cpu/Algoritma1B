@@ -1,0 +1,5 @@
+Nama Anda : aristo
+Kelas Anda : 11
+NPM Anda : 590412e3
+Total Ujian : 41.10
+
