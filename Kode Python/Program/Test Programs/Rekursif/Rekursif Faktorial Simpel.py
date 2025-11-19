@@ -8,4 +8,4 @@ def faktorial(n):
 
 
 bil= int(input("Masukkan Bilangan : "))
-print(f"\n{faktorial(bil)}")
+print(f"\n Hasil {bil}! = {faktorial(bil)}")
