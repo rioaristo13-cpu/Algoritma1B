@@ -45,5 +45,5 @@ def infixToPostfix(s):
     return ''.join(res)
 
 if __name__ == '__main__':
-    exp = "D+C*E+(F+G)"
+    exp = input("Masukkan Infixnya : ")
     print(infixToPostfix(exp))
