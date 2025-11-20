@@ -1,5 +1,4 @@
 def selection_sort(arr):
-    
     n = len(arr)
     for i in range (n):
         
@@ -13,7 +12,6 @@ def selection_sort(arr):
     return arr
 
 def quick_sort(arr):
-
     if len(arr) <= 1:
         return arr
     
