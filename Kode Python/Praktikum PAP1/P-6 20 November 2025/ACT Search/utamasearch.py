@@ -1,4 +1,3 @@
-#Data
 import searching
 
 data1 = [1,3,4,6,7,4,9,10,2,5,8,11]
