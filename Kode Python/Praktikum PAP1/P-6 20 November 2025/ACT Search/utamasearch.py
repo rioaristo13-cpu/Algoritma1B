@@ -12,4 +12,3 @@ index2 = searching.binary_search(data2,23)
 print(f"Hasil linear search Data 1 : {index2}")
 print(f"Hasil binary search Data 2 : {index1}")
 
-
