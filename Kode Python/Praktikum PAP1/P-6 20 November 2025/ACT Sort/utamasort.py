@@ -7,5 +7,5 @@ print (f"Data : {data}\n")
 ssort = sorting.selection_sort(data)
 qsort = sorting.quick_sort(data)
 
-print (f"Hasil Selection Sorting : {qsort}")
-print (f"Hasil Quick Sorting : {ssort}")
+print (f"Hasil Selection Sorting : {ssort}")
+print (f"Hasil Quick Sorting : {qsort}")
