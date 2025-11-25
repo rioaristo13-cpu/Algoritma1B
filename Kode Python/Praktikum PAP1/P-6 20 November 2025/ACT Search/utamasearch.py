@@ -10,6 +10,6 @@ print(f"Data 2 : {data2}\n")
 index1 = searching.linear_search(data1,7)
 index2 = searching.binary_search(data2,23)
 
-print(f"Hasil linear search Data 1 : {index2}")
-print(f"Hasil binary search Data 2 : {index1}")
+print(f"Hasil linear search Data 1 bernilai 7  : di index ke {index1}")
+print(f"Hasil binary search Data 2 bernilai 23 : di index ke {index2}")
 
