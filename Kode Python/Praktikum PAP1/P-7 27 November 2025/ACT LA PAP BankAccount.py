@@ -13,6 +13,9 @@ class BankAccount:
 account = BankAccount("Aristo", 1000)
 print(f"Pemilik : {account.owner}")
 print(f"Balance : {account.get_balance()}")
-account.set_balance(1500)
+
+bbaru = int(input("Masukkan balance baru : "))
+account.set_balance(bbaru)
+
 print(f"Balance Baru : {account.get_balance()}")
 account.set_balance(-500)  
