@@ -14,8 +14,12 @@ account = BankAccount("Aristo", 1000)
 print(f"Pemilik : {account.owner}")
 print(f"Balance : {account.get_balance()}")
 
-bbaru = int(input("Masukkan balance baru : "))
-account.set_balance(bbaru)
+while True:
+    try:
+        bbaru = int(input("Masukkan balance baru : "))
+        account.set_balance(bbaru)
+        break
+    except Exception as a:
+        print ("Input harus Bulat Positif")
 
 print(f"Balance Baru : {account.get_balance()}")
-account.set_balance(-500)  
