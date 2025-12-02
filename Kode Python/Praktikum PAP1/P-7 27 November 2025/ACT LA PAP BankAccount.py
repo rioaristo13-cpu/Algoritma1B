@@ -10,8 +10,8 @@ class BankAccount:
         else:
             quit("Saldo tidak boleh negatif!")
             
-
-account = BankAccount("Aristo", 1000)
+nama = input("Masukkan nama pemilik Akun : ")
+account = BankAccount(nama, 1000)
 print(f"Pemilik : {account.owner}")
 print(f"Balance : {account.get_balance()}")
 
