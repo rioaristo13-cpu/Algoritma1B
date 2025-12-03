@@ -29,7 +29,7 @@ public class Relasi2 {
 
         out.println("\n--- Anggota Himpunan B : ---");
         for (int i = 1; i <= jumlahAnggotaB; i++) {
-            out.print("Anggota b "+i+" : ");
+            out.print("Anggota B "+i+" : ");
             himpunanB[i] = input.nextLine();
         }
     }
