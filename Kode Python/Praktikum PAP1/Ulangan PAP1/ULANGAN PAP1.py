@@ -20,7 +20,7 @@ while True:
         print (f"Harga Barang   : Rp {harga}")
         print (f"Jumlah Barang  : {jumlah}")
         print (f"Total Harga    : Rp {total}")
-        print (f"Harga Didiskon : Rp {tdiskon}")
+        print (f"Harga Didiskon : Rp {total-tdiskon}")
         print (f"Diskon Harga   : {dis}\n")
 
     def fileuang():
