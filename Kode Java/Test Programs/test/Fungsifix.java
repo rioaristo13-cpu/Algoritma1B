@@ -2,7 +2,7 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class Fungsifix {
-
+    
     int[] HimpunanA;
     int[] HimpunanB;
     int[] HimpunanRelasi;
@@ -10,7 +10,7 @@ public class Fungsifix {
     int jmlHimpunanA, jmlHimpunanB, jmlRelasi;
     Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Fungsifix madhun = new Fungsifix();
         madhun.inputAnggota();
         madhun.cetakHimpunan();
@@ -22,122 +22,142 @@ public class Fungsifix {
     public void inputAnggota() {
         out.print("Masukkan Jumlah Himpunan A = ");
         jmlHimpunanA = input.nextInt();
-
+        
         HimpunanA = new int[jmlHimpunanA];
-        for (int i = 0; i < jmlHimpunanA; i++) {
-            out.print("Himpunan A yang ke " + (i + 1) + " : ");
+        for (int i = 0; i <= (jmlHimpunanA - 1); i++) {
+            out.print("Himpunan A yang ke " + (i+1) + " : ");
             HimpunanA[i] = input.nextInt();
         }
 
-        out.print("Masukkan Jumlah Himpunan B = ");
+        out.print("\nMasukkan Jumlah Himpunan B = ");
         jmlHimpunanB = input.nextInt();
-
+        
         HimpunanB = new int[jmlHimpunanB];
-        for (int i = 0; i < jmlHimpunanB; i++) {
-            out.print("Himpunan B yang ke " + (i + 1) + " : ");
+        for (int i = 0; i <= (jmlHimpunanB - 1); i++) {
+            out.print("Himpunan B yang ke " + (i+1) + " : ");
             HimpunanB[i] = input.nextInt();
         }
     }
 
     public void cetakHimpunan() {
-        out.print("\nAnggota Himpunan A = { ");
-        for (int i = 0; i < jmlHimpunanA; i++) {
+        out.print ("\nAnggota Himpunan A = { ");
+        for (int i = 0; i <= (jmlHimpunanA - 1); i++) {
             out.print(HimpunanA[i] + " ");
         }
-        out.println("}");
+        out.println("} ");
 
-        out.print("Anggota Himpunan B = { ");
-        for (int i = 0; i < jmlHimpunanB; i++) {
+        out.print ("Anggota Himpunan B = { ");
+        for (int i = 0; i <= (jmlHimpunanB - 1); i++) {
             out.print(HimpunanB[i] + " ");
         }
-        out.println("}\n");
+        
+        out.println("} ");
     }
 
     public void inputRelasi() {
         int jmlRelasiMaks = jmlHimpunanA * jmlHimpunanB;
-        out.println("Relasi Maksimal : " + jmlRelasiMaks);
-
-        do {
+        out.println("Relasi Maksimal : "+jmlRelasiMaks);
+        out.print("\n"); 
+        
+        do { 
             out.print("Masukkan Jumlah Relasi : ");
             jmlRelasi = input.nextInt();
         } while (jmlRelasi > jmlRelasiMaks);
 
         HimpunanRelasi = new int[jmlRelasi];
         HimpunanAsal = new int[jmlRelasi];
+        out.println("Masukkan Relasinya : ");
+        for (int i = 0; i <= (jmlRelasi - 1); i++) {
+            boolean SamaA;
+            boolean SamaB;
 
-        for (int i = 0; i < jmlRelasi; i++) {
-            boolean valid;
-            do {
-                valid = true;
-                out.println("Relasi ke-" + (i + 1) + " :");
-                out.print("Masukkan Asal (A): ");
-                int asal = input.nextInt();
-                out.print("Masukkan Tujuan (B): ");
-                int tujuan = input.nextInt();
+            out.println("\nRelasi ke" + (i+1) + " : ");
+            do { 
+                SamaA = false;
+                SamaB = false;
 
-                boolean SamaA = false;
-                boolean SamaB = false;
+                out.print("Masukkan Asal A : ");
+                int tempA = input.nextInt();
+                out.print("Masukkan Tujuan B : ");
+                int tempB = input.nextInt();
 
-                for (int a : HimpunanA)
-                    if (asal == a) SamaA = true;
-
-                for (int b : HimpunanB)
-                    if (tujuan == b) SamaB = true;
-
-                if (!SamaA || !SamaB) {
-                    out.println("❌ Anggota tidak terdapat di Himpunan A atau B. Ulangi input.");
-                    valid = false;
-                } else {
-                    HimpunanAsal[i] = asal;
-                    HimpunanRelasi[i] = tujuan;
+                // FIXED: check Asal against HimpunanA, and Tujuan against HimpunanB
+                for(int j = 0; j <= (jmlHimpunanA - 1); j++) {
+                    if (tempA == HimpunanA[j]) {
+                        SamaA = true;
+                    }
                 }
-            } while (!valid);
+                for(int k = 0; k <= (jmlHimpunanB - 1); k++) {
+                    if (tempB == HimpunanB[k]) {
+                        SamaB = true;
+                    }
+                }
+
+                if (SamaA == false || SamaB == false) {
+                    out.println("Anggota Himpunan Tidak terdapat dikedua Himpunan A & B");
+                } else {
+                    HimpunanAsal[i] = tempA;
+                    HimpunanRelasi[i] = tempB;
+                }
+
+            } while (SamaA == false || SamaB == false);
         }
     }
 
     public void cekFungsi() {
-        boolean fungsi = true;
-
-        // Check if each element in A maps to exactly one element in B
-        for (int a : HimpunanA) {
-            int count = 0;
-            for (int i = 0; i < jmlRelasi; i++) {
-                if (HimpunanAsal[i] == a) count++;
-            }
-            if (count != 1) {
-                fungsi = false;
-                break;
+        int jumlahAnggota = 0;
+        boolean adaSama = false;
+        
+        for (int i = 0; i <= (jmlHimpunanA - 1); i++) {
+            for (int j = 0; j <= (jmlRelasi - 1); j++) {
+                if (HimpunanA[i] == HimpunanAsal[j]) {
+                    jumlahAnggota++;
+                }
             }
         }
 
-        if (fungsi)
-            out.println("\n✅ Relasi yang diinput adalah Fungsi");
-        else
-            out.println("\n⚠️ Relasi yang diinput bukan Fungsi");
+        // FIXED: check for duplicate domain elements mapping to multiple B
+        for (int i = 0; i <= (jmlRelasi - 2); i++) {
+            for (int j = i + 1; j <= (jmlRelasi - 1); j++) {
+                if (HimpunanAsal[i] == HimpunanAsal[j]) {
+                    adaSama = true;
+                }
+            }
+        }
+
+        if (jumlahAnggota == jmlHimpunanA && adaSama == false) {
+            out.println("\nRelasi yang diinput adalah Fungsi");
+        } else {
+            out.println("\nRelasi yang diinput merupakan relasi biasa antara "+ jumlahAnggota +" anggota ");
+        }
     }
 
     public void cetakRelasi() {
-        out.print("\nDaerah Domain = { ");
-        for (int a : HimpunanA)
-            out.print(a + " ");
+        out.print("Daerah Domain = { ");
+        for (int i = 0; i <= (jmlHimpunanA - 1); i++) {
+            out.print(HimpunanA[i] + " ");
+        }
         out.println("}");
 
         out.print("Daerah Kodomain = { ");
-        for (int b : HimpunanB)
-            out.print(b + " ");
+        for (int i = 0; i <= (jmlHimpunanB - 1); i++) {
+            out.print(HimpunanB[i] + " ");
+        }
         out.println("}");
 
-        out.print("Range = { ");
-        for (int i = 0; i < jmlRelasi; i++) {
-            boolean unique = true;
-            for (int j = 0; j < i; j++) {
+        out.print("Range adalah = { ");
+        // FIXED: removed semicolon, corrected range uniqueness logic
+        for (int i = 0; i <= (jmlRelasi - 1); i++) {
+            boolean adaSama = false;
+            for (int j = i + 1; j <= (jmlRelasi - 1); j++) {
                 if (HimpunanRelasi[i] == HimpunanRelasi[j]) {
-                    unique = false;
-                    break;
+                    adaSama = true;
                 }
             }
-            if (unique) out.print(HimpunanRelasi[i] + " ");
+            if (adaSama == false) {
+                out.print(HimpunanRelasi[i] + " ");
+            }
         }
-        out.println("}\n");
+        out.println("}");
     }
 }
